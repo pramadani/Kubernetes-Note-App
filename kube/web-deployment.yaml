@@ -15,7 +15,6 @@ spec:
       containers:
         - name: web
           image: 905418011796.dkr.ecr.us-east-1.amazonaws.com/back-end:latest
-          imagePullPolicy: Never
           env:
             - name: FLASK_ENV
               value: "development"
