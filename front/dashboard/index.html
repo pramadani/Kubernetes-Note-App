@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="tesnote.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Notes</h2>
+                <button id="newNoteButton">New Note</button>
+            </div>
+            
+            <ul id="notesList" class="notes-list"></ul>
+        </div>
+
+        <div class="main">
+            <div class="blank-header">
+                <button id="deleteButton">Delete Notes</button>
+            </div>
+            <div class="isi-notes">
+                <textarea id="noteHeader" placeholder="Judul"></textarea>
+                <textarea id="noteContent" placeholder="Isi"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="note.js"></script>
+</body>
+</html>

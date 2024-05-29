@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: notepad_db
+    ports:
+      - 5432:5432
+
+  web:
+    build:
+      context: .
+      dockerfile: dockerfile.flask
+    restart: always
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/notepad_db
+  
+  nginx:
+    build:
+      context: .
+      dockerfile: dockerfile.nginx
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - web
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   ports:
+  #     - "8888:80"
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: postgres@postgres.com
+  #     PGADMIN_DEFAULT_PASSWORD: postgres
