@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: 905418011796.dkr.ecr.us-east-1.amazonaws.com/front-end:latest
+          image: pramadani/note-front
           ports:
             - containerPort: 80
 ---

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: 905418011796.dkr.ecr.us-east-1.amazonaws.com/back-end:latest
+          image: pramadani/note-back
           env:
             - name: FLASK_ENV
               value: "development"
